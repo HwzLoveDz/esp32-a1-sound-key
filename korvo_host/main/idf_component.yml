@@ -1,0 +1,6 @@
+dependencies:
+  espressif/esp_board_manager: "~0.7"
+  espressif/esp_boards: "~0.6"
+  espressif/esp_lvgl_port: "~2.9"
+  lvgl/lvgl: "~9.5"
+  espressif/usb_host_cdc_acm: "^2.4.0"

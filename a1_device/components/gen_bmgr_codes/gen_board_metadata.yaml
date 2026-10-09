@@ -1,0 +1,83 @@
+version: 1
+board: esp32_a1_ev_board
+chip: esp32s31
+
+devices:
+  osc_en_ctrl:
+    type: power_ctrl
+    sub_type: gpio
+    peripherals:
+    - gpio_osc_en
+
+  audio_dac:
+    type: audio_codec
+    peripherals:
+    - gpio_a1_en
+    - i2s_audio_out
+    - i2c_master
+
+  audio_adc:
+    type: audio_codec
+    peripherals:
+    - gpio_a1_en
+    - i2s_audio_in
+    - i2c_master
+
+  fs_sdcard:
+    type: fs_fat
+    sub_type: sdmmc
+    io:
+      clk: 24
+      cmd: 25
+      d0: 20
+      d1: 21
+      d2: 22
+      d3: 23
+
+peripherals:
+  i2c_master:
+    type: i2c
+    role: master
+    io:
+      sda_io_num: 46
+      scl_io_num: 45
+
+  i2s_audio_out:
+    type: i2s
+    role: master
+    format: tdm-out
+    io:
+      mclk: 36
+      bclk: 37
+      ws: 1
+      dout: 35
+      din: 6
+
+  i2s_audio_in:
+    type: i2s
+    role: master
+    format: tdm-in
+    io:
+      mclk: 36
+      bclk: 37
+      ws: 1
+      dout: 35
+      din: 6
+
+  gpio_a1_int:
+    type: gpio
+    role: io
+    io:
+      pin: 7
+
+  gpio_a1_en:
+    type: gpio
+    role: io
+    io:
+      pin: 2
+
+  gpio_osc_en:
+    type: gpio
+    role: io
+    io:
+      pin: 38

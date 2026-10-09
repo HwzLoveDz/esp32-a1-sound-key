@@ -1,0 +1,8 @@
+# ESP-IDF 6.2's component resolver inspects conditional requirements of the
+# optional esp_h264 dependency brought by the full Korvo board definition.
+# Its Kconfig is absent on S31 (the locked component is P4-only). Define the
+# referenced flag as disabled so the resolver can evaluate it consistently;
+# this demo neither initializes the camera nor enables an H.264 component.
+config ESP_VIDEO_USE_CUSTOMIZED_ESP_H264_VERSION
+    bool "Use customized optional H.264 component (keep disabled on S31)"
+    default n

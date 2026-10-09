@@ -1,0 +1,22 @@
+# ESP-IDF generated outputs and local configuration
+**/build*/
+**/managed_components/
+**/sdkconfig
+**/sdkconfig.old
+**/dependencies.lock
+**/.cache/
+**/__pycache__/
+*.pyc
+.vscode/
+.idea/
+.env
+.env.*
+local/
+vendor/
+captures/
+# Logs and device/disk dumps stay local
+*.log
+*.bin
+*.elf
+*.map
+*.core
